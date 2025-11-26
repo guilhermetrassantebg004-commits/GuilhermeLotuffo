@@ -1,0 +1,38 @@
+     <%-include('../cabecalho.ejs')%>
+     <header>
+        <h3>Catalogar Nova luta</h3>
+      </header>
+      <div class="content">
+        <form id="form-instrumento" autocomplete="off" method="post" action="/luta/add/ok">
+          <div class="grid">
+            <div>
+              <label for="nome">Lutadores da luta</label>
+              <input id="nome" name="lutadores" type="text" placeholder="Ex:Mike vs Jake" required>
+            </div>
+            <div>
+              <label for="nome">Categoria de Peso:</label>
+              <select name="catgpeso">
+                  <option value="Mosca">Mosca</option>
+                  <option value="Galo">Galo</option>
+                  <option value="Pena">Pena</option>
+                  <option value="Leve">Leve</option>
+                  <option value="Meio-Médio">Meio-Médio</option>
+                  <option value="Médio">Médio</option>
+                  <option value="Meio-Pesado">Meio-Pesado</option>
+                  <option value="Cruzador">Cruzador</option>
+                  <option value="Pesado">Pesado</option>
+                </select>
+            </div>
+            <div>
+              <label for="nome">Juiz responsável</label>
+              <input id="nome" name="juiz" type="text" placeholder="Ex:Kenny Bayless:" required>
+            </div>
+           <div class="field-help">Os campos com * são obrigatórios.</div>
+          <footer>
+            <a type="button" class="btn ghost" id="btn-cancelar" href="/luta/lst">Cancelar</a>
+            <button type="submit" class="btn primary">Nova luta</button>
+          </footer>
+        </form>
+      </div>
+
+      <%-include('../rodape.ejs')%>

@@ -1,0 +1,36 @@
+<%-include('../cabecalho.ejs')%>
+     <header>
+        <h3>Registrar Evento</h3>
+      </header>
+      <div class="content">
+        <form id="form-instrumento" autocomplete="off" method="post" action="/evento/add/ok">
+          <div class="grid">
+            <div>
+              <label for="nome">Nome do Evento: </label>
+              <input id="nome" name="nomeeven" type="text" placeholder="Ex:WBA" required>
+            </div>
+            <div>
+              <label for="nome">Organizador: </label>
+              <input id="nome" name="organizador" type="text" placeholder="Ex:Gilberto Jesús Mendoza" required>
+            </div>
+            <div>
+              <label for="nome">Patrocinadores: </label>
+              <input id="nome" name="patrocinadores" type="text" placeholder="Ex:Adidas" required>
+            </div>
+            <div>
+              <label for="nome">Local: </label>
+              <input id="nome" name="local" type="text" placeholder="Ex:EUA" required>
+            </div>
+            <div>
+              <label for="nome">Data: </label>
+              <input id="nome" name="data" type="date" placeholder="Ex:30/12/2026" required>
+            </div>
+           <div class="field-help">Os campos com * são obrigatórios.</div>
+          <footer>
+            <a type="button" class="btn ghost" id="btn-cancelar" href="/evento/lst">Cancelar</a>
+            <button type="submit" class="btn primary">Registrar Evento</button>
+          </footer>
+        </form>
+      </div>
+
+      <%-include('../rodape.ejs')%>

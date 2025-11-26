@@ -1,0 +1,32 @@
+<%-include('../cabecalho.ejs')%>
+     <header>
+        <h3>Registrar novo ingresso</h3>
+      </header>
+      <div class="content">
+        <form id="form-instrumento" autocomplete="off" method="post"  action="/ingresso/add/ok">
+          <div class="grid">
+            <div>
+              <label for="nome">Local: </label>
+              <input id="nome" name="local" type="text" placeholder="Ex:EUA / Washington" required>
+            </div>
+            <div>
+              <label for="nome">Luta: </label>
+              <input id="nome" name="luta" type="text" placeholder="Ex:Mike vs Jake" required>
+            </div>
+            <div>
+              <label for="nome">Preço: </label>
+              <input id="nome" name="preco" type="number" placeholder="Ex:$ 20" required>
+            </div>
+            <div>
+              <label for="nome">Assento: </label>
+              <input id="nome" name="assento" type="text" placeholder="Ex:A12" required>
+            </div>
+           <div class="field-help">Os campos com * são obrigatórios.</div>
+          <footer>
+            <a type="button" class="btn ghost" id="btn-cancelar" href="/ingresso/lst">Cancelar</a>
+            <button type="submit" class="btn primary">Novo registro de ingresso</button>
+          </footer>
+        </form>
+      </div>
+
+      <%-include('../rodape.ejs')%>

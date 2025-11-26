@@ -1,0 +1,46 @@
+     <%-include('../cabecalho.ejs')%>
+     <header>
+        <h3>Adicionar Lutador</h3>
+      </header>
+      <div class="content">
+        <form id="form-instrumento" enctype="multipart/form-data" autocomplete="off" method="post" action="/lutador/add/ok">
+          <div class="grid">
+            <div>
+              <label for="nome">Nome do Lutador: </label>
+              <input id="nome" name="nome" type="text" placeholder="Ex: Gervonta Davis" required>
+            </div>
+            <div>
+              <label for="nome">Categoria de Peso:</label>
+                <select name="catgpeso">
+                    <option value="Mosca">Mosca</option>
+                    <option value="Galo">Galo</option>
+                    <option value="Pena">Pena</option>
+                    <option value="Leve">Leve</option>
+                    <option value="Meio-Médio">Meio-Médio</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Meio-Pesado">Meio-Pesado</option>
+                    <option value="Cruzador">Cruzador</option>
+                    <option value="Pesado">Pesado</option>
+                </select>
+            </div>
+            <div>
+              <label for="nome">Nacionalidade: </label>
+              <input id="nome" name="nacionalidade" type="text" placeholder="Ex:Brasil" required>
+            </div>
+            <div>
+              <label for="nome">Cartel Wins.Loses.Draws /K.O</label>
+              <input id="nome" name="cartel" type="text" placeholder="Ex: 12/0/1 | 4 K.O" required>
+            </div>
+              <div> 
+              <label for="foto">Foto:</label>
+              <input id="foto" name="foto" type="file" >
+              </div>
+          </div>
+          <footer>
+            <a type="button" class="btn ghost" id="btn-cancelar" href="/lutador/lst">Cancelar</a>
+            <button type="submit" class="btn primary">Adicionar Lutador</button>
+          </footer>
+        </form>
+      </div>
+
+      <%-include('../rodape.ejs')%>

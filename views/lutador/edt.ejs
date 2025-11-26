@@ -1,0 +1,56 @@
+     <%-include('../cabecalho.ejs')%>
+     <header>
+        <h3>Editar Lutador</h3>
+      </header>
+      <div class="content">
+        <form id="form-instrumento" enctype="multipart/form-data" autocomplete="off" method="post">
+          <div class="grid">
+            <div>
+              <label for="nome">ID</label>
+              <input id="id" value="<%=lutador.id%>" name="id" type="text" placeholder="33333" >
+            </div>
+            <div>
+              <label for="nome">Nome do Lutador: </label>
+              <input id="nome" value="<%=lutador.nome%>" name="nome" type="text" placeholder="Ex: Gervonta Davis" required>
+            </div>
+            <div>
+              <label for="nome">Categoria de Peso:</label>
+                <select name="catgpeso">
+                    <option value="Mosca">Mosca</option>
+                    <option value="Galo">Galo</option>
+                    <option value="Pena">Pena</option>
+                    <option value="Leve">Leve</option>
+                    <option value="Meio-Médio">Meio-Médio</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Meio-Pesado">Meio-Pesado</option>
+                    <option value="Cruzador">Cruzador</option>
+                    <option value="Pesado">Pesado</option>
+                </select>
+              <input type="submit" value="<%=lutador.catgpeso%>" required>
+            </div>
+            <div>
+              <label for="nome">Nacionalidade: </label>
+              <input id="nome" name="nacionalidade" type="text" value="<%=lutador.nacionalidade%>" placeholder="Ex:Brasil" required>
+            </div>
+            <div>
+              <label for="nome">Cartel Wins.Loses.Draws /K.O</label>
+              <input id="nome" name="cartel" type="text" value="<%=lutador.cartel%>" placeholder="Ex: 12/0/1 | 4 K.O" required>
+            </div>
+             <div> 
+              <label for="foto">Foto:</label>
+              <% if (lutador.foto) {%>
+                <img src="data:image/png;based64, <%= lutador.foto.toString('base64') %>" alt="<%= lutador.nome%>" width="120" height="150"/>
+              <% } else { %>
+                Sem imagem
+                <% } %>
+                <input id="foto" name="foto" type="file" >
+              </div>
+          </div>
+          <footer>
+            <a type="button" class="btn ghost" id="btn-cancelar" href="/lutador/lst">Cancelar</a>
+            <button type="submit" class="btn primary">Editar Lutador</button>
+          </footer>
+        </form>
+      </div>
+
+      <%-include('../rodape.ejs')%>
