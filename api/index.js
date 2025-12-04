@@ -1,38 +1,37 @@
 import { createServer } from 'http';
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-import express from 'express'
 const app = express();
-//Importar os modelos 
+
+// modelos
 import Lutadores from '../models/Lutadores.js';
 import Luta from '../models/Luta.js';
 import Ingresso from '../models/Ingresso.js';
 import Evento from '../models/Evento.js';
 
-//upload
+// upload
 import multer from 'multer';
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
-//Confiram se tem essa linha aqui também
-app.use(express.urlencoded({extended:true}))
-app.set('view engine', 'ejs')
+// config
+app.use(express.urlencoded({ extended: true }));
+app.set('view engine', 'ejs');
 
-
-//Liberar acesso a pasta public
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-
-
-// Converte o caminho do arquivo atual
+// dirname no ESModules
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(__dirname + '/public'))
+const __dirname = path.dirname(__filename);
 
-//rotas
+// paths para Vercel
+app.set('views', path.join(__dirname, '../views'));
+app.use(express.static(path.join(__dirname, '../public')));
+
+
 app.get('/', (req, res) => {
-    res.render("index")
-})
+  res.render('index');
+});
 
 app.get('/lutador/lst', async (req, res) => {
     const lutadores= await Lutadores.find()
