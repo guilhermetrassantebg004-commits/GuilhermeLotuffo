@@ -3,10 +3,15 @@ import { createServer } from 'http';
 import express from 'express'
 const app = express();
 //Importar os modelos 
-import Lutadores from './models/Lutadores.js';
-import Luta from './models/Luta.js';
-import Ingresso from './models/Ingresso.js';
-import Evento from './models/Evento.js';
+import Lutadores from '../models/Lutadores.js';
+import Luta from '../models/Luta.js';
+import Ingresso from '../models/Ingresso.js';
+import Evento from '../models/Evento.js';
+
+//upload
+import multer from 'multer';
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
 
 //Confiram se tem essa linha aqui também
 app.use(express.urlencoded({extended:true}))
@@ -17,10 +22,6 @@ app.set('view engine', 'ejs')
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
-//upload
-import multer from 'multer';
-const storage = multer.memoryStorage();
-const upload = multer({ storage });
 
 // Converte o caminho do arquivo atual
 const __filename = fileURLToPath(import.meta.url);
@@ -160,9 +161,23 @@ app.get('/evento/del/:id', async (req, res) => {
   res.redirect('/evento/lst');
 });
 
-app.get('/userEvento/lst', async(req, res) => {
-    const userevento= await  Evento.find()
-    res.render("userEvento/lst", {userevento})
+app.get('/userLuta/lst', async(req, res) => {
+    const luta= await  Luta.find()
+    res.render("userLuta/lst", {luta})
 })
 
+app.get('/userLutador/lst', async(req, res) => {
+    const lutador= await  Lutadores.find()
+    res.render("userLutador/lst", {lutador})
+})
+
+app.get('/userEvento/lst', async(req, res) => {
+    const evento= await  Evento.find()
+    res.render("userEvento/lst", {evento})
+})
+
+app.get('/userIngresso/lst', async(req, res) => {
+    const ingresso= await  Ingresso.find()
+    res.render("userIngresso/lst", {ingresso})
+})
 app.listen(3002)

@@ -5,11 +5,7 @@ const LutadoresSchema = conexao.Schema({
     catgpeso:{type:String, required:true},
     nacionalidade:{type:String, required:true},
     cartel:{type:String, required:true},
-    foto:{type:Buffer,
-           get: (valor) => {
-           if (!valor) return null;
-            return `data:image/png;base64,${valor.toString('base64')}`;}
-           }
+    foto:{type:Buffer}
 })
 const Lutadores = conexao.model("Lutadores", LutadoresSchema)
 export default Lutadores
