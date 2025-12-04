@@ -26,6 +26,7 @@ import { dirname } from 'path';
 // Converte o caminho do arquivo atual
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(__dirname + '/public'))
 
 //rotas
