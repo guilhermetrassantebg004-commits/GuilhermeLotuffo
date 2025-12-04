@@ -1,0 +1,197 @@
+<%-include('../cabecalho.ejs')%>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">Sistema de Gerenciamento de Lutas de Boxe</h1>
+            <p class="header-subtitle">Gerencie lutadores, lutas, eventos e ingressos</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Lutadores</a></li>
+                <li><a href="lutas.html" class="nav-link active">Lutas</a></li>
+                <li><a href="ingressos.html" class="nav-link">Ingressos</a></li>
+                <li><a href="eventos.html" class="nav-link">Eventos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="content-section">
+                <div class="card">
+                    <!-- Header -->
+                    <div class="card-header">
+                        <h2 class="card-title">Gerenciamento de Lutas</h2>
+                    </div>
+
+                    <!-- Toolbar -->
+                    <div class="toolbar">
+                        <div class="search-container">
+                            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                            <input type="text" class="search-input" placeholder="Pesquisar luta...">
+                        </div>
+                        <button class="btn btn-primary">
+                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Adicionar Luta
+                        </button>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Lutador 1</th>
+                                    <th class="text-center">VS</th>
+                                    <th>Lutador 2</th>
+                                    <th>Data</th>
+                                    <th>Horário</th>
+                                    <th>Categoria</th>
+                                    <th class="text-center">Rounds</th>
+                                    <th>Status</th>
+                                    <th class="text-center">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="text-highlight">Mike Tyson</td>
+                                    <td class="text-center"><span class="badge badge-neutral">VS</span></td>
+                                    <td class="text-highlight">Muhammad Ali</td>
+                                    <td>15/12/2025</td>
+                                    <td>20:00</td>
+                                    <td>Peso Pesado</td>
+                                    <td class="text-center">12</td>
+                                    <td><span class="badge badge-info">Agendada</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-action" title="Editar">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                </svg>
+                                            </button>
+                                            <button class="btn-action" title="Excluir">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="text-highlight">Floyd Mayweather</td>
+                                    <td class="text-center"><span class="badge badge-neutral">VS</span></td>
+                                    <td class="text-highlight">Manny Pacquiao</td>
+                                    <td>22/12/2025</td>
+                                    <td>21:00</td>
+                                    <td>Peso Médio</td>
+                                    <td class="text-center">12</td>
+                                    <td><span class="badge badge-success">Confirmada</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-action" title="Editar">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                </svg>
+                                            </button>
+                                            <button class="btn-action" title="Excluir">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td class="text-highlight">Canelo Álvarez</td>
+                                    <td class="text-center"><span class="badge badge-neutral">VS</span></td>
+                                    <td class="text-highlight">Floyd Mayweather</td>
+                                    <td>05/01/2026</td>
+                                    <td>19:30</td>
+                                    <td>Peso Médio-Pesado</td>
+                                    <td class="text-center">10</td>
+                                    <td><span class="badge badge-info">Agendada</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-action" title="Editar">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                </svg>
+                                            </button>
+                                            <button class="btn-action" title="Excluir">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td class="text-highlight">Mike Tyson</td>
+                                    <td class="text-center"><span class="badge badge-neutral">VS</span></td>
+                                    <td class="text-highlight">Canelo Álvarez</td>
+                                    <td>18/01/2026</td>
+                                    <td>22:00</td>
+                                    <td>Peso Pesado</td>
+                                    <td class="text-center">12</td>
+                                    <td><span class="badge badge-warning">Pendente</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-action" title="Editar">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                </svg>
+                                            </button>
+                                            <button class="btn-action" title="Excluir">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="card-footer">
+                        <p>Total de lutas: 4</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Sistema de Gerenciamento de Boxe. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+<%-include('../rodape.ejs')%>
