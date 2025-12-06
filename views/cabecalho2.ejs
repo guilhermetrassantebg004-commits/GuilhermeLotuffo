@@ -444,17 +444,13 @@ body {
   </style>
 </head>
 <body>
-  <div class="navbar">
-    <!-- Header -->
-    <div class="header">
-      <div class="title">Sistema de Gerenciamento de lutas de Boxe</div>
-    </div>
-    <div class="subtitle">Gerencie Lutadores, Lutas, ingressos e eventos</div>
-    
-    <!-- Tabs -->
-    <div class="tabs" role="nav-menu" aria-label="Seções">
-      <a class="nav-link" href="/userEvento/lst">Evento</a>
-      <a class="nav-link" href="/userLuta/lst">Luta</a>
-      <a class="nav-link" href="/userIngresso/lst">Ingresso</a>
-      <a class="nav-link active" href="/userLutador/lst">Lutadores</a>
-    </div>
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="/userLutador/lst" class="nav-link">Lutadores</a></li>
+                <li><a href="/userLuta/lst" class="nav-link">Lutas</a></li>
+                <li><a href="/userIngresso/lst" class="nav-link">Ingressos</a></li>
+                <li><a href="/userEvento/lst" class="nav-link">Eventos</a></li>
+            </ul>
+        </div>
+    </nav>
