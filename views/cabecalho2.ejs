@@ -161,8 +161,6 @@ body {
 
 .search-input:focus {
     outline: none;
-    ring: 2px;
-    ring-color: #475569;
 }
 
 /* Buttons */
@@ -446,18 +444,17 @@ body {
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="navbar">
     <!-- Header -->
     <div class="header">
-      <div class="logo" aria-hidden="true">♪</div>
       <div class="title">Sistema de Gerenciamento de lutas de Boxe</div>
     </div>
     <div class="subtitle">Gerencie Lutadores, Lutas, ingressos e eventos</div>
     
     <!-- Tabs -->
-    <div class="tabs" role="tablist" aria-label="Seções">
-      <a class="tab" href="/userEvento/lst">Evento</a>
-      <a class="tab" href="/userLuta/lst">Luta</a>
-      <a class="tab" href="/userIngresso/lst">Ingresso</a>
-      <a class="tab" href="/userEvento/lst">Lutadores</a>
+    <div class="tabs" role="nav-menu" aria-label="Seções">
+      <a class="nav-link" href="/userEvento/lst">Evento</a>
+      <a class="nav-link" href="/userLuta/lst">Luta</a>
+      <a class="nav-link" href="/userIngresso/lst">Ingresso</a>
+      <a class="nav-link active" href="/userLutador/lst">Lutadores</a>
     </div>
